@@ -20,7 +20,7 @@ namespace Weight_Tracker
 
             if (Properties.Settings.Default.DateFormat == "MM/dd/yyyy") { RadbtnDate1_CheckedChanged(); }
             else if (Properties.Settings.Default.DateFormat == "dd/MM/yyyy") { RadbtnDate2_CheckedChanged(); }
-       
+
             txtGoal.Text = goal.ToString("0") + " " + Properties.Settings.Default.UnitFormat;
         }
         private void BtnApply_Click(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace Weight_Tracker
             string unit = lblUnitHolder.Text;
             float value = float.Parse(txtGoal.Text.Replace(unit, ""));
 
-            if (!radbtn.Text.Contains(unit)) 
+            if (!radbtn.Text.Contains(unit))
             {
                 if (unit == "lbs")
                 {
@@ -67,9 +67,9 @@ namespace Weight_Tracker
                 }
                 txtGoal.Text += " " + radbtn.Tag.ToString();
                 lblUnitHolder.Text = radbtn.Tag.ToString();
-            }            
+            }
         }
-        private void RadbtnUnitLbs_CheckedChanged() { radbtnUnitLbs.Checked = true;  }
+        private void RadbtnUnitLbs_CheckedChanged() { radbtnUnitLbs.Checked = true; }
         private void RadbtnUnitKgs_CheckedChanged() { radbtnUnitKg.Checked = true; }
         private void RadbtnUnitSt_CheckedChanged() { radbtnUnitSt.Checked = true; }
         private void RadbtnDate1_CheckedChanged() { radbtnDate1.Checked = true; }

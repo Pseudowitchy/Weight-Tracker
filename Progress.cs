@@ -23,7 +23,7 @@ namespace Weight_Tracker
             float goalWeight = Properties.Settings.Default.GoalWeight;
 
             DateTime startDate = DateTime.Parse(lines[0].Remove(lines[0].IndexOf(",")));
-            DateTime endDate = DateTime.Parse(lines[lines.Length-1].Remove(lines[lines.Length - 1].IndexOf(",")));
+            DateTime endDate = DateTime.Parse(lines[lines.Length - 1].Remove(lines[lines.Length - 1].IndexOf(",")));
 
             chartProgress.ChartAreas[0].AxisX.Minimum = startDate.AddDays(-14).ToOADate();
             chartProgress.ChartAreas[0].AxisX.Maximum = endDate.AddDays(14).ToOADate();

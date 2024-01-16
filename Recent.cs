@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using System.Collections.Generic;
 
 namespace Weight_Tracker
 {
@@ -60,7 +60,7 @@ namespace Weight_Tracker
                         data[location] = data[location].Remove(data[location].IndexOf(",") + 1);
 
                 foreach (var textbox in this.Controls.OfType<TextBox>().Where(txt => txt.Name.Contains(index)))
-                { 
+                {
                     data[location] += textbox.Text.Replace(Properties.Settings.Default.UnitFormat, "");
                     textbox.Enabled = false;
                 }
@@ -87,11 +87,11 @@ namespace Weight_Tracker
                 foreach (var label in this.Controls.OfType<Label>().Where(lbl => lbl.Name.Contains(index)))
                     if (label.Name.Contains("Date")) { entryToDelete = label.Text + ","; }
                 foreach (var textbox in this.Controls.OfType<TextBox>().Where(txt => txt.Name.Contains(index)))
-                        entryToDelete += textbox.Text; 
+                    entryToDelete += textbox.Text;
 
                 for (int i = 0; i < data.Count; i++)
                 {
-                    if (data[i] ==  entryToDelete) { data.RemoveAt(i); }
+                    if (data[i] == entryToDelete) { data.RemoveAt(i); }
                 }
                 File.WriteAllLines("weight_data.txt", data);
                 ResetList();
