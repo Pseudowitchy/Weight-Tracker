@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.label1 = new System.Windows.Forms.Label();
             this.radbtnUnitSt = new System.Windows.Forms.RadioButton();
             this.radbtnUnitKg = new System.Windows.Forms.RadioButton();
@@ -35,6 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtGoal = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblUnitHolder = new System.Windows.Forms.Label();
             this.radbtnUnitLbs = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.radbtnDate1 = new System.Windows.Forms.RadioButton();
@@ -42,7 +44,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
-            this.lblUnitHolder = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -127,6 +128,16 @@
             this.panel1.Size = new System.Drawing.Size(155, 145);
             this.panel1.TabIndex = 8;
             // 
+            // lblUnitHolder
+            // 
+            this.lblUnitHolder.AutoSize = true;
+            this.lblUnitHolder.Location = new System.Drawing.Point(45, 120);
+            this.lblUnitHolder.Name = "lblUnitHolder";
+            this.lblUnitHolder.Size = new System.Drawing.Size(44, 16);
+            this.lblUnitHolder.TabIndex = 4;
+            this.lblUnitHolder.Text = "label2";
+            this.lblUnitHolder.Visible = false;
+            // 
             // radbtnUnitLbs
             // 
             this.radbtnUnitLbs.AutoSize = true;
@@ -209,16 +220,6 @@
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.BtnApply_Click);
             // 
-            // lblUnitHolder
-            // 
-            this.lblUnitHolder.AutoSize = true;
-            this.lblUnitHolder.Location = new System.Drawing.Point(45, 120);
-            this.lblUnitHolder.Name = "lblUnitHolder";
-            this.lblUnitHolder.Size = new System.Drawing.Size(44, 16);
-            this.lblUnitHolder.TabIndex = 4;
-            this.lblUnitHolder.Text = "label2";
-            this.lblUnitHolder.Visible = false;
-            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -231,6 +232,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Settings";
             this.Text = "Settings";

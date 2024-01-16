@@ -13,7 +13,7 @@ namespace Weight_Tracker
         static void Main()
         {
             if (!File.Exists("weight_data.txt"))
-                using (StreamWriter creator = File.CreateText("weight_data.txt"));
+                using (StreamWriter creator = File.CreateText("weight_data.txt")) ;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
