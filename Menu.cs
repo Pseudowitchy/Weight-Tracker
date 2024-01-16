@@ -30,6 +30,9 @@ namespace Weight_Tracker
                 textWriter.WriteLine(newData);
 
             MessageBox.Show("New entry saved to data set!");
+
+            btnRecent.Enabled = true;
+            btnProgress.Enabled = true;
         }
         private void BtnRecent_Click(object sender, EventArgs e)
         {
@@ -57,6 +60,14 @@ namespace Weight_Tracker
         }
         private void Menu_Load(object sender, EventArgs e)
         {
+            string[] dataCheck = File.ReadAllLines("weight_data.txt");
+
+            if (dataCheck.Length == 0)
+            {
+                btnRecent.Enabled = false;
+                btnProgress.Enabled = false;
+            }
+
             lblUnit.Text = Properties.Settings.Default.UnitFormat;
         }
         private float WeightConversion(float weight, string unit)

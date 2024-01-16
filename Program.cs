@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Weight_Tracker
@@ -11,6 +12,9 @@ namespace Weight_Tracker
         [STAThread]
         static void Main()
         {
+            if (!File.Exists("weight_data.txt"))
+                using (StreamWriter creator = File.CreateText("weight_data.txt"));
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Menu());
